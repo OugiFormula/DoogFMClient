@@ -23,11 +23,11 @@ async function createWindow() {
   });
   
 
-  DiscordRPC.register('DISCORD-CLIENT-ID');
+  DiscordRPC.register('DISCORD-RPC-CLIENT-ID');
   rpc = new DiscordRPC.Client({ transport: 'ipc' });
 
   try {
-    await rpc.login({ clientId: 'DISCORD-CLIENT-ID' });
+    await rpc.login({ clientId: 'DISCORD-RPC-CLIENT-ID' });
     console.log('Discord RPC connected.');
   } catch (error) {
     console.error('Error connecting to Discord RPC:', error.message);
@@ -94,8 +94,7 @@ function updateRichPresence(stationName, stationLink) {
       details: 'Listening to ',
       state: stationName,
       largeImageKey: 'large',
-      startTimestamp: new Date(),
-      largeImageText: 'DoogFM Client 1.2.2',
+      largeImageText: 'DoogFM Client 1.2.3',
       buttons: [
         { label: 'Listen At DoogFM', url: doogFMUrl.toString() },
         { label: 'Radio Station', url: stationUrl.toString() },

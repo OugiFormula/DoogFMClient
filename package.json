@@ -16,7 +16,7 @@
     "build:linux": "electron-builder --linux"
   },
   "keywords": [],
-  "author":  {
+  "author": {
     "name": "Yukio Koito",
     "email": "iaimpikaz@gmail.com"
   },
@@ -35,7 +35,7 @@
     "@electron-forge/maker-squirrel": "^7.2.0",
     "@electron-forge/maker-zip": "^7.2.0",
     "@electron-forge/plugin-auto-unpack-natives": "^7.2.0",
-    "electron": "latest",
+    "electron": "^28.1.1",
     "electron-builder": "latest"
   },
   "build": {
@@ -48,22 +48,28 @@
       "src/**/*"
     ],
     "win": {
-      "target": ["nsis"],
+      "target": [
+        "nsis"
+      ],
       "icon": "src/icons/windows/icon4site.ico"
     },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
-      "license" : "LICENSE.TXT"
+      "license": "LICENSE.TXT"
     },
     "mac": {
       "icon": "src/icons/mac/icon4site.icns",
-      "target": ["dmg"],
+      "target": [
+        "dmg"
+      ],
       "hardenedRuntime": true
     },
     "linux": {
       "icon": "src/icons/linux/icon4site.png",
-      "target": ["deb"],
+      "target": [
+        "deb"
+      ],
       "category": "AudioVideo",
       "executableName": "doogfm"
     }
