@@ -1,0 +1,71 @@
+{
+  "name": "doogfm",
+  "productName": "DoogFM",
+  "version": "1.2.3",
+  "description": "The ultimate internet radio player",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\"",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux"
+  },
+  "keywords": [],
+  "author":  {
+    "name": "Yukio Koito",
+    "email": "iaimpikaz@gmail.com"
+  },
+  "homepage": "https://doog.cool/doogfm",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "discord-rich-presence": "^0.0.8",
+    "discord-rpc": "^4.0.1",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.2.0",
+    "@electron-forge/maker-deb": "^7.2.0",
+    "@electron-forge/maker-rpm": "^7.2.0",
+    "@electron-forge/maker-squirrel": "^7.2.0",
+    "@electron-forge/maker-zip": "^7.2.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.2.0",
+    "electron": "latest",
+    "electron-builder": "latest"
+  },
+  "build": {
+    "appId": "cool.doog.doogfm",
+    "productName": "DoogFM",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*"
+    ],
+    "win": {
+      "target": ["nsis"],
+      "icon": "src/icons/windows/icon4site.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "license" : "LICENSE.TXT"
+    },
+    "mac": {
+      "icon": "src/icons/mac/icon4site.icns",
+      "target": ["dmg"],
+      "hardenedRuntime": true
+    },
+    "linux": {
+      "icon": "src/icons/linux/icon4site.png",
+      "target": ["deb"],
+      "category": "AudioVideo",
+      "executableName": "doogfm"
+    }
+  }
+}
