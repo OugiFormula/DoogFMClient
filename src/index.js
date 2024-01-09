@@ -23,11 +23,11 @@ async function createWindow() {
   });
   
 
-  DiscordRPC.register('DISCORD-RPC-CLIENT-ID');
+  DiscordRPC.register('1191531814846738522');
   rpc = new DiscordRPC.Client({ transport: 'ipc' });
 
   try {
-    await rpc.login({ clientId: 'DISCORD-RPC-CLIENT-ID' });
+    await rpc.login({ clientId: '1191531814846738522' });
     console.log('Discord RPC connected.');
   } catch (error) {
     console.error('Error connecting to Discord RPC:', error.message);
@@ -35,6 +35,7 @@ async function createWindow() {
 
   mainWindow.loadURL('https://doog.cool/DoogFM');
   mainWindow.removeMenu();
+  mainWindow.webContents.openDevTools();
 
   mainWindow.webContents.on('dom-ready', () => {
     mainWindow.webContents.executeJavaScript(`
