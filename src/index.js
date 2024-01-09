@@ -35,7 +35,6 @@ async function createWindow() {
 
   mainWindow.loadURL('https://doog.cool/DoogFM');
   mainWindow.removeMenu();
-  mainWindow.webContents.openDevTools();
 
   mainWindow.webContents.on('dom-ready', () => {
     mainWindow.webContents.executeJavaScript(`
